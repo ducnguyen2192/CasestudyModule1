@@ -42,12 +42,12 @@ body {
     background-color: #272781;
 }
 
-.app {
-    display: flex;
-    flex-flow: column;
-    width: 100vw;
-    height: 100vh;
-}
+/*.app {*/
+/*    display: flex;*/
+/*    flex-flow: column;*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*}*/
 
 header {
     display: flex;
@@ -66,8 +66,8 @@ header {
     display: flex;
     flex-flow: column;
     flex: 1;
-    height: 500px;
-    min-width: 250px;
+    height: 250px;
+    min-width: 260px;
     background-color: #DFE3E6;
     overflow-y: scroll;
     overflow-x: scroll;
@@ -174,19 +174,19 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modalContent {
-    margin: 55px auto;
-    width: 800px;
-    height: 500px;
-    background-color: #F5F6F7;
+/*.modalContent {*/
+/*    margin: 55px auto;*/
+/*    width: 800px;*/
+/*    height: 500px;*/
+/*    background-color: #F5F6F7;*/
 
-}
+/*}*/
 
-.ModalBody {
-    padding: 100px 150px;
-    background-color: #F5F6F7;
-    overflow-x: scroll;
-    /*overflow-y: scroll;*/
-}
+/*.ModalBody {*/
+/*    padding: 100px 150px;*/
+/*    background-color: #F5F6F7;*/
+/*    overflow-x: scroll;*/
+/*    !*overflow-y: scroll;*!*/
+/*}*/
 
 

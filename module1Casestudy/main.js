@@ -19,7 +19,7 @@ function createNewItemLists(){
     arrListItem.push(list_item);
 
     document.getElementById("newCard").innerHTML +=
-        "<div onclick='openItemModal()' class=\"list-item\"" + " id = " + list_item.id + " + '>"  + "</br>" +
+        "<div  class=\"list-item\"" + " id = " + list_item.id + " + '>"  + "</br>" +
         "<button onclick='moveLeft(" + itemId + ")' id='leftButton'> < </button>" + "</br>" +
         "<p id= '" + list_item.id + "'>" + list_item.content + "</p>" +
         "<button onclick='moveRight("+itemId+")' id='rightButton'> > </button>"+ "</div>"
@@ -34,18 +34,16 @@ class list_items{
         this.index = index;
         this.content = content;
     }
-
-
 }
 function moveRight(itemId) {
-    let myObj = document.getElementById("a"+itemId);
+    let myObj = document.getElementById(itemId);
     myObj.remove();
     let node = document.createElement("p");
     node.appendChild(myObj);
 
     let obj = checkID(itemId);
 
-    if (obj.index <3){
+    if (obj.index <5){
         if (obj.index == 1){
             obj.index ++
             document.getElementById("list2").appendChild(node);
@@ -55,11 +53,15 @@ function moveRight(itemId) {
             obj.index ++
             document.getElementById("list3").appendChild(node);
             // document.getElementById("rightButton").style.display = "none";
+        }else if (obj.index == 3){
+            obj.index ++
+            document.getElementById("list4").appendChild(node);
         }
-
+        else if (obj.index == 4){
+            obj.index ++
+            document.getElementById("list5").appendChild(node);
+        }
     }
-    console.log(itemId)
-
 }
 
 
@@ -72,19 +74,26 @@ function moveLeft(itemId) {
 
     let obj = checkID(itemId);
 
-    if (obj.index >1){
+    if (obj.index >=1){
+        if (obj.index == 5){
+            obj.index --
+            document.getElementById("list4").appendChild(node);
+            // document.getElementById("rightButton").style.display = "block";
+        }else
+        if (obj.index == 4){
+            obj.index --
+            document.getElementById("list3").appendChild(node);
+            // document.getElementById("leftButton").style.display = "none";
+        }else
         if (obj.index == 3){
             obj.index --
             document.getElementById("list2").appendChild(node);
-            // document.getElementById("rightButton").style.display = "block";
-        }else
-        if (obj.index == 2){
+            // document.getElementById("leftButton").style.display = "none";
+        }else if (obj.index == 2){
             obj.index --
             document.getElementById("list1").appendChild(node);
             // document.getElementById("leftButton").style.display = "none";
         }
-
-    } else {
 
     }
 }
@@ -97,23 +106,22 @@ function checkID(itemId){
     }
 }
 
-const modal = document.querySelector('#myModal');
-
-// Events
-window.addEventListener('click', outsideClick);
-
+// const modal = document.querySelector('#myModal');
+//
+// // Events
+// window.addEventListener('click', outsideClick);
+//
 // Open
-function openItemModal() {
-    modal.style.display = 'block';
+// function openItemModal() {
+//     modal.style.display = 'block';
+// }
 
-}
-
-
-function outsideClick(e) {
-	if (e.target == modal) {
-		modal.style.display = 'none';
-	}
-}
+//
+// function outsideClick(e) {
+//     if (e.target == modal) {
+//         modal.style.display = 'none';
+//     }
+// }
 
 
 
